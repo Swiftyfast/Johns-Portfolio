@@ -1,13 +1,17 @@
 {
-  "name": "parcel-vanilla-starter",
+  "name": "johns-portfolio",
   "private": true,
   "version": "0.0.0",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build src/index.html"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.18.5"
+  },
   "devDependencies": {
     "parcel": "^2.14.0"
   }

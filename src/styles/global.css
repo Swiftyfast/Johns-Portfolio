@@ -1,0 +1,267 @@
+:root {
+  color-scheme: dark;
+  --color-background: #17191f;
+  --color-surface: #20232b;
+  --color-text: #f2f3f5;
+  --color-muted: #a4a9b5;
+  --color-border: #343842;
+  --color-primary: #78d6c6;
+  --color-secondary: #ff9b8f;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--color-background);
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 4px;
+}
+
+.site-shell {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 88px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-brand {
+  flex: 0 0 auto;
+  color: var(--color-primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 20px;
+}
+
+.nav-link {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link-active {
+  color: var(--color-primary);
+}
+
+.nav-link-active {
+  text-decoration: underline;
+  text-decoration-color: var(--color-secondary);
+  text-underline-offset: 5px;
+}
+
+.page-content {
+  padding: clamp(64px, 12vw, 144px) 0;
+}
+
+.page-content h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.home-intro {
+  max-width: 720px;
+  margin: 24px 0 0;
+  color: var(--color-muted);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  line-height: 1.7;
+}
+
+.home-projects-link {
+  margin: 24px 0 0;
+}
+
+.home-projects-link a,
+.home-contact a {
+  color: var(--color-primary);
+}
+
+.home-contact {
+  margin-top: 56px;
+}
+
+.home-contact h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.home-contact ul {
+  margin: 16px 0 0;
+  padding-left: 1.5rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.hobbies-page section {
+  margin-top: 40px;
+}
+
+.hobbies-page h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.hobbies-page p {
+  margin: 12px 0 0;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.hobbies-page a {
+  color: var(--color-primary);
+}
+
+.exploring-city-note {
+  margin: 16px 0 32px;
+  color: var(--color-muted);
+}
+
+.exploring-city-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.exploring-city-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.exploring-city-list li + li {
+  margin-top: 8px;
+}
+
+.exploring-city-area {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.exploring-city-area:hover,
+.exploring-city-area-selected {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.exploring-city-area:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+
+.exploring-city-info {
+  min-height: 120px;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-surface);
+}
+
+.exploring-city-info h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.exploring-city-info p {
+  margin: 16px 0 0;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.work-experience-page ul {
+  margin: 24px 0 0;
+  padding-left: 1.5rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.work-experience-page > section > ul > li + li {
+  margin-top: 20px;
+}
+
+.work-experience-page .work-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.work-experience-page .work-tech-list li {
+  padding: 3px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.work-experience-page h2 {
+  margin: 64px 0 0;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 0;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+    gap: 12px 18px;
+  }
+
+  .exploring-city-content {
+    grid-template-columns: 1fr;
+  }
+}
