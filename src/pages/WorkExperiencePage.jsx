@@ -33,7 +33,8 @@ export default function WorkExperiencePage() {
           </li>
           <li>
             Helped create an inventory management system incorporated into the
-            admin application.
+            admin application. Assisted with quality assurance of all Segistics
+            products.
             <ul className="work-tech-list" aria-label="Technologies used">
               <li>React</li>
               <li>Node.js</li>
