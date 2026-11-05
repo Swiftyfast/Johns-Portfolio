@@ -13,6 +13,8 @@
     "react-router": "^7.18.5"
   },
   "devDependencies": {
+    "@parcel/optimizer-data-url": "^2.16.4",
+    "@parcel/transformer-inline-string": "^2.16.4",
     "parcel": "^2.14.0"
   }
 }
