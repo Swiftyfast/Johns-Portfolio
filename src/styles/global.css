@@ -95,12 +95,38 @@ a:focus-visible {
   line-height: 1;
 }
 
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.9fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.home-copy {
+  min-width: 0;
+}
+
 .home-intro {
   max-width: 720px;
   margin: 24px 0 0;
   color: var(--color-muted);
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   line-height: 1.7;
+}
+
+.home-photo-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.home-photo {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgb(0 0 0 / 28%);
+  object-fit: cover;
 }
 
 .home-projects-link {
@@ -113,7 +139,7 @@ a:focus-visible {
 }
 
 .home-contact {
-  margin-top: 56px;
+  margin-top: 32px;
 }
 
 .home-contact h2 {
@@ -122,7 +148,7 @@ a:focus-visible {
 }
 
 .home-contact ul {
-  margin: 16px 0 0;
+  margin: 12px 0 0;
   padding-left: 1.5rem;
   color: var(--color-muted);
   line-height: 1.8;
@@ -434,6 +460,14 @@ a:focus-visible {
   .site-nav {
     justify-content: flex-start;
     gap: 12px 18px;
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .home-photo {
+    width: min(100%, 360px);
   }
 
   .exploring-city-content {

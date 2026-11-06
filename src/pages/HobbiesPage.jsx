@@ -8,6 +8,11 @@ const fictionRecommendations = [
   { title: "The Topeka School", author: "Ben Lerner", coverId: 8909586 },
   { title: "The Gone World", author: "Tom Sweterlitsch", coverId: 8808811 },
 ];
+const nonfictionRecommendations = [
+  { title: "1491", author: "Charles C. Mann", coverId: 803118 },
+  { title: "Grant", author: "Ron Chernow", coverId: 11521312 },
+  { title: "Endurance", author: "Alfred Lansing", coverId: 542833 },
+];
 
 function BookRecommendation({ book }) {
   const [imageError, setImageError] = useState(false);
@@ -96,10 +101,12 @@ export default function HobbiesPage() {
                     onClick={() => setSelectedDetail(
                       option === "Recommend fiction"
                         ? { title: option, books: fictionRecommendations }
-                        : {
-                            title: option,
-                            description: "Book recommendations coming soon.",
-                          },
+                        : option === "Recommended non-fiction"
+                          ? { title: option, books: nonfictionRecommendations }
+                          : {
+                              title: option,
+                              description: "Book recommendations coming soon.",
+                            },
                     )}
                     type="button"
                   >
