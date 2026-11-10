@@ -1,8 +1,37 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import dndPlayersHandbook from "data-url:../assets/dnd-players-handbook-preview.jpg";
+import drawSteelHeroes from "data-url:../assets/draw-steel-heroes-preview.jpg";
+import mothershipCover from "data-url:../assets/mothership-cover-preview.jpg";
 
 const readingOptions = ["Recommend fiction", "Recommended non-fiction"];
 const tabletopOptions = ["Mothership", "Draw Steel", "DND"];
+const tabletopDetails = {
+  Mothership: {
+    cover: mothershipCover,
+    coverAlt: "Mothership Player's Survival Guide cover",
+    paragraphs: [
+      "Mothership is a science fiction horror game. Think Alien or the Thing, not Return of the Jedi or Star Trek.",
+      "I have run both one shots and small campaigns in this system. As someone coming from 5e, I really enjoy how this game stretches a completely different set of muscles.",
+      "I knew it was going well the first time I ran when my players all jumped at an innocous sound.",
+    ],
+  },
+  "Draw Steel": {
+    cover: drawSteelHeroes,
+    coverAlt: "Draw Steel: Heroes cover",
+    paragraphs: ["Draw steel is a heroic, cinematic, tactical fantasy ttrpg.",
+      "I have only been a player, but have througouly enjoyed my time and would recommend this game to anyone."
+    ],
+  },
+  DND: {
+    cover: dndPlayersHandbook,
+    coverAlt: "Dungeons & Dragons Player's Handbook cover",
+    paragraphs: ["DND 5e is a fantasy ttrpg that was, and still is, the fulcrum to the hobby expanding greatly.",
+      "I have run one long campaign that took several years to finish (covid and player availability slowed things down).",
+      "As a player I have done several shorter campaigns, and enjoyed my time playing"
+    ],
+  },
+};
 const fictionRecommendations = [
   { title: "Ancillary Justice", author: "Ann Leckie", coverId: 7355949 },
   { title: "The Topeka School", author: "Ben Lerner", coverId: 8909586 },
@@ -64,7 +93,7 @@ export default function HobbiesPage() {
                     onClick={() =>
                       setSelectedDetail({
                         title: option,
-                        description: "More details coming soon.",
+                        ...tabletopDetails[option],
                       })
                     }
                     type="button"
@@ -123,6 +152,13 @@ export default function HobbiesPage() {
             aria-live="polite"
             className="hobbies-info"
           >
+            {selectedDetail.cover && (
+              <img
+                alt={selectedDetail.coverAlt}
+                className="tabletop-cover"
+                src={selectedDetail.cover}
+              />
+            )}
             <h2 id="selected-hobby-heading">{selectedDetail.title}</h2>
             {selectedDetail.books ? (
               <div className="book-recommendations">
@@ -130,6 +166,10 @@ export default function HobbiesPage() {
                   <BookRecommendation book={book} key={book.title} />
                 ))}
               </div>
+            ) : selectedDetail.paragraphs ? (
+              selectedDetail.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))
             ) : (
               <p>{selectedDetail.description}</p>
             )}
