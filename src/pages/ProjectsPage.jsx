@@ -1,13 +1,12 @@
 const projects = [
   {
-    name: "Point of Sale System",
-    timeframe: "September 2021 - January 2026",
+    name: "Inventory System",
+    timeframe: "January 2025 - November 2026",
     description:
-      "Built and maintained custom point of sale software for in-store and auction operations across seven Midwest locations, processing card and cash payments and supporting revenue from Facebook Marketplace.",
+      "Added an inventory workflow to the admin web application so shipments, manifests, and items could be tracked and sent to auction.",
     highlights: [
-      "Developed a React and JavaScript POS experience for store transactions and auction checkouts.",
-      "Handled the processing flow for both card and cash payments in a real-world retail environment.",
-      "Supported a high-volume operation, with weekly sales reaching roughly $100,000 per location.",
+      "Inventory data had to be synced to Cloud Firestore so the admin UI interacted with a single database.",
+      "Regularly tested other engineers' tickets by reading the ticket and validating the behavior without a scripted QA plan.",
     ],
   },
   {
@@ -23,13 +22,14 @@ const projects = [
     ],
   },
   {
-    name: "Inventory System",
-    timeframe: "January 2025 - November 2026",
+    name: "Point of Sale System",
+    timeframe: "September 2021 - January 2026",
     description:
-      "Added an inventory workflow to the admin web application so shipments, manifests, and items could be tracked and sent to auction.",
+      "Built and maintained custom point of sale software for in-store and auction operations across seven Midwest locations, processing card and cash payments and supporting revenue from Facebook Marketplace.",
     highlights: [
-      "Inventory data had to be synced to Cloud Firestore so the admin UI interacted with a single database.",
-      "Regularly tested other engineers' tickets by reading the ticket and validating the behavior without a scripted QA plan.",
+      "Developed a React and JavaScript POS experience for store transactions and auction checkouts.",
+      "Handled the processing flow for both card and cash payments in a real-world retail environment.",
+      "Supported a high-volume operation, with weekly sales reaching roughly $100,000 per location.",
     ],
   },
 ];
