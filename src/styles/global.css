@@ -491,5 +491,27 @@ a:focus-visible {
 
   .hobbies-layout {
     grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .hobbies-list-panel {
+    display: contents;
+  }
+
+  .hobbies-list-panel > section[aria-labelledby="tabletop-rpgs-heading"] {
+    order: 1;
+  }
+
+  .hobbies-info {
+    order: 2;
+    margin-top: 32px;
+  }
+
+  .hobbies-list-panel > section[aria-labelledby="film-heading"] {
+    order: 3;
+  }
+
+  .hobbies-list-panel > section[aria-labelledby="reading-heading"] {
+    order: 4;
   }
 }
